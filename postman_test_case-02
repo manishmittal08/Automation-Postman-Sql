@@ -1,0 +1,22 @@
+Steps to Add a New Request
+1. Add a New Request to the Collection
+
+2. In Postman, go to the Impledge_QA_YourFullName collection .
+3. Select Add Request.
+   Name the request: Get Shipment Details.
+   Set Up the Request
+
+4. Method: GET
+   URL: https://api.easypost.com/v2/shipments/shp_e0b570fd1d7d4b62bd206917eae5881a
+   Authorization:
+   Go to the Authorization tab.
+   Set the Type to Basic Auth.
+   Use the username from the existing collection (your EasyPost API key).
+   Leave the password field empty.
+   Save the Request
+
+5. Click Save to ensure the request is part of the collection.
+   Send the Request
+
+6. Click Send to test the request.
+   Observe the response in the Body tab to confirm that the shipment details are fetched successfully.
