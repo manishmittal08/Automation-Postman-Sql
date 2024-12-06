@@ -1,0 +1,12 @@
+const jsonData = pm.response.json();
+
+pm.test("Retail rate is 12", function () {
+    const retailRate = parseFloat(jsonData.selected_rate.retail_rate);
+    pm.expect(retailRate).to.eql(12);
+});
+
+pm.test("Retail rate is greater than list rate", function () {
+    const retailRate = parseFloat(jsonData.selected_rate.retail_rate);
+    const listRate = parseFloat(jsonData.selected_rate.list_rate);
+    pm.expect(retailRate).to.be.greaterThan(listRate);
+});
