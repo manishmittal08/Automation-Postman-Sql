@@ -1,0 +1,29 @@
+# SCRIPT DATA
+const jsonData = pm.response.json();
+
+// Test: Response contains no errors
+pm.test("Response contains no errors", function () {
+    const errors = jsonData.verifications.delivery.errors; // Access nested errors field
+    pm.expect(errors).to.eql([]); // Verify errors is an empty array
+});
+
+
+
+// Test: Response ZIP is verified as 06810
+pm.test("Response ZIP is verified as 06810", function () {
+    const responseZip = jsonData.zip || jsonData.address.zip; // Adjust if 'zip' is nested
+    pm.expect(responseZip.startsWith("06810")).to.be.true;
+});
+
+# BODY DATA
+   {
+    "company": "Residence Inn",
+    "street1": "22 Segar St",
+    "street2": "",
+    "city": "Danbury",
+     "state": "CT",
+    "country": "US",
+    "zip": "06810-6325",
+    "phone": "855-782-3877",
+    "email": "shipper@mailinator.com"
+  }
